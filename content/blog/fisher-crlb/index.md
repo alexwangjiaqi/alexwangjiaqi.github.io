@@ -1,7 +1,7 @@
 ---
 title: Fisher information and the Cramér–Rao lower bound
 slug: fisher-crlb
-date: 2026-04-07
+date: 2026-04-07T20:00:00Z
 draft: false
 subtitle: Why curvature of the log-likelihood controls estimation precision
 tags:

@@ -1,7 +1,7 @@
 ---
 title: Likelihood and the score
 slug: likelihood-and-score
-date: 2026-04-07
+date: 2026-04-07T10:00:00Z
 draft: false
 subtitle: What the likelihood function is, why it is not a probability, and what the score tells you
 tags:
