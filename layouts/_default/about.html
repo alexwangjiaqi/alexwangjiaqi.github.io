@@ -2,7 +2,9 @@
 <article class="about-page">
   <div class="article about-body">
     <h2 id="about-me">About me</h2>
-    <img src="{{ absURL "img/about-photo.jpg" }}" alt="Alexander Wang" class="about-photo" />
+    {{- with .Resources.GetMatch "about-photo.jpg" }}
+    <img src="{{ .Permalink }}" alt="Alexander Wang" class="about-photo" />
+    {{- end }}
     {{ .Content }}
   </div>
   {{- partial "about-footer.html" . }}
