@@ -1,5 +1,9 @@
 # Build site with Hugo and deploy to GitHub Pages.
-# Settings → Pages → Build and deployment → Source: GitHub Actions
+#
+# One-time setup: Repo → Settings → Pages → Build and deployment → Source: GitHub Actions.
+# (Until that is set, deploy may still fail; we avoid configure-pages so the build step does
+# not call the Pages API and hit 404 before you have enabled Pages.)
+#
 name: Deploy Hugo site to Pages
 
 on:
@@ -31,16 +35,15 @@ jobs:
         with:
           hugo-version: "0.143.1"
 
-      - name: Configure Pages
-        id: pages
-        uses: actions/configure-pages@v5
-
+      # Project Pages URL: https://<owner>.github.io/<repo>/
+      # (No configure-pages step: that action 404s until Pages is enabled for the repo.)
       - name: Build with Hugo
         env:
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
         run: |
-          hugo --gc --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
+          hugo --gc --minify \
+            --baseURL "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/"
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
