@@ -11,7 +11,7 @@ notebook_url: "https://github.com/alexwangjiaqi/alex-blog/blob/main/notebooks/fi
 
 The shape of the log-likelihood near its maximum tells you something fundamental about estimation. A sharply peaked log-likelihood means the data strongly constrain the parameter; a flat one means many parameter values are about equally compatible with what was observed.
 
-In the [previous post](/blog/likelihood-and-score), we introduced the likelihood, the log-likelihood, and the score, and saw that the MLE maximises the likelihood. This post takes up the natural next question: how precisely can we estimate the parameter? Fisher information is the quantity that answers this, and the Cramér–Rao lower bound is the conclusion it leads to.
+In the [previous post]({{< ref "/blog/likelihood-and-score" >}}), we introduced the likelihood, the log-likelihood, and the score, and saw that the MLE maximises the likelihood. This post takes up the natural next question: how precisely can we estimate the parameter? Fisher information is the quantity that answers this, and the Cramér–Rao lower bound is the conclusion it leads to.
 
 ## Fisher information
 

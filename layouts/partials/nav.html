@@ -5,10 +5,11 @@
 <nav class="nav" aria-label="Primary">
   <ul>
     <li class="nav-logo">
-      <a href="{{ "/" | relLangURL }}" class="site-logo wordmark">{{ site.Params.wordmark }}</a>
+      <a href="{{ site.Home.RelPermalink }}" class="site-logo wordmark">{{ site.Params.wordmark }}</a>
     </li>
-    <li><a href="{{ "/about-me/" | relLangURL }}"{{ if $isAbout }} class="nav-current"{{ end }}>About</a></li>
-    <li><a href="{{ "/blog/" | relLangURL }}"{{ if $isBlog }} class="nav-current"{{ end }}>Blog</a></li>
-    <li><a href="{{ "/personal/" | relLangURL }}"{{ if $isPersonal }} class="nav-current"{{ end }}>Personal</a></li>
+    {{- /* Paths must not start with / so relLangURL keeps the baseURL subpath (e.g. /alex-blog/). */ -}}
+    <li><a href="{{ "about-me/" | relLangURL }}"{{ if $isAbout }} class="nav-current"{{ end }}>About</a></li>
+    <li><a href="{{ "blog/" | relLangURL }}"{{ if $isBlog }} class="nav-current"{{ end }}>Blog</a></li>
+    <li><a href="{{ "personal/" | relLangURL }}"{{ if $isPersonal }} class="nav-current"{{ end }}>Personal</a></li>
   </ul>
 </nav>

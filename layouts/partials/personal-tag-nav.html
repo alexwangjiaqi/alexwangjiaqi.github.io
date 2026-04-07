@@ -7,7 +7,7 @@
     {{- if eq $current $term }}
     <span class="tag-current">{{ $term }}</span>
     {{- else }}
-    <a href="{{ relLangURL (printf "/personal/topic/%s/" $slug) }}">{{ $term }}</a>
+    <a href="{{ relLangURL (printf "personal/topic/%s/" $slug) }}">{{ $term }}</a>
     {{- end }}
   </li>
   {{- end }}

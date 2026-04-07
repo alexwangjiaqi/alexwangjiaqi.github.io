@@ -20,10 +20,10 @@ I spend my free time travelling and taking photos, something I fell in love with
 
 ## About this blog
 
-I like understanding things from first principles, and I've found that writing is usually the best way to figure out whether I actually do. This [blog](/blog/) is where I work through ideas I want to understand better: proofs, explanations, implementations, and the occasional half-baked thought.
+I like understanding things from first principles, and I've found that writing is usually the best way to figure out whether I actually do. This [blog]({{< ref "/blog" >}}) is where I work through ideas I want to understand better: proofs, explanations, implementations, and the occasional half-baked thought.
 
-My posts are written primarily for myself as a future reference, though I hope they're useful to others too. Much of the writing is exploratory in spirit: my aim is to build intuition for difficult ideas, not to present a definitive treatment.
+My posts are written primarily for myself as a future reference, though I hope they're useful to others too. Much of the writing is exploratory in spirit, my aim is to build intuition for difficult ideas, not to present a definitive treatment.
 
-I also use this space to share a little more about my [personal life](/personal/) from time to time, especially about travel, photography, and other interests outside academic work. 
+I also use this space to share a little more about my [personal life]({{< ref "/personal" >}}) from time to time, especially about travel, photography, and other interests outside academic work. 
 
 Please feel free to email me with any corrections or comments.
