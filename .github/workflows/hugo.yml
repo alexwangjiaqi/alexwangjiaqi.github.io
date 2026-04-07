@@ -1,8 +1,6 @@
 # Build site with Hugo and deploy to GitHub Pages.
 #
 # One-time setup: Repo → Settings → Pages → Build and deployment → Source: GitHub Actions.
-# (Until that is set, deploy may still fail; we avoid configure-pages so the build step does
-# not call the Pages API and hit 404 before you have enabled Pages.)
 #
 name: Deploy Hugo site to Pages
 
@@ -24,24 +22,30 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      # Keep in sync with a version you build with locally (extended = match +extended builds).
+      HUGO_VERSION: "0.160.0"
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v3
-        with:
-          hugo-version: "0.143.1"
+      - name: Install Hugo (extended)
+        run: |
+          set -euo pipefail
+          curl -fsSL "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.tar.gz" -o hugo.tar.gz
+          tar -xzf hugo.tar.gz hugo
+          sudo install -m 755 hugo /usr/local/bin/hugo
+          hugo version
 
       # Project Pages URL: https://<owner>.github.io/<repo>/
-      # (No configure-pages step: that action 404s until Pages is enabled for the repo.)
       - name: Build with Hugo
         env:
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
         run: |
+          set -euo pipefail
           hugo --gc --minify \
             --baseURL "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/"
 
