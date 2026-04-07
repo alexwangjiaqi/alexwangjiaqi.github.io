@@ -20,6 +20,6 @@ I like understanding things from first principles, and I've found that writing i
 
 My posts are written primarily for myself as a future reference, though I hope they're useful to others too. Much of the writing is exploratory in spirit, my aim is to build intuition for difficult ideas, not to present a definitive treatment.
 
-I also use this space to share a little more about my [personal life]({{< ref "/personal" >}}) from time to time, especially about travel, photography, and other interests outside academic work. 
+I also use this space to share a little more about my [personal life]({{< ref "/personal" >}}) from time to time, especially about travel, photography, and other interests outside academic work.
 
 Please feel free to email me with any corrections or comments.

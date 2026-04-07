@@ -1,5 +1,5 @@
-{{- /* About = about-me.md; Blog = blog + tags; Personal = personal + personal_tags */ -}}
-{{- $isAbout := and .File (eq .File.Path "about-me.md") -}}
+{{- /* About = content/about-me/ bundle; Blog = blog + tags; Personal = personal + personal_tags */ -}}
+{{- $isAbout := and .File (eq .File.Path "about-me/index.md") -}}
 {{- $isBlog := or (eq .Section "blog") (eq .Section "tags") -}}
 {{- $isPersonal := or (eq .Section "personal") (eq .Section "personal_tags") -}}
 <nav class="nav" aria-label="Primary">
