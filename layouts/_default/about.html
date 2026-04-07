@@ -2,9 +2,7 @@
 <article class="about-page">
   <div class="article about-body">
     <h2 id="about-me">About me</h2>
-    {{- with .Resources.GetMatch "about-photo.jpg" }}
-    <img src="{{ .RelPermalink }}" alt="Alexander Wang" class="about-photo" />
-    {{- end }}
+    <img src="{{ relURL "img/about-photo.jpg" }}" alt="Alexander Wang" class="about-photo" />
     {{ .Content }}
   </div>
   {{- partial "about-footer.html" . }}
