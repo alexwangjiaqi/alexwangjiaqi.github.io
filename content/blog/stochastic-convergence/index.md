@@ -143,6 +143,8 @@ $$
 \mathbb{P}(A_n(\varepsilon)) \to 0 \quad \text{as } n \to \infty.
 $$
 
+Note that the bad set $A_n(\varepsilon)$ is allowed to change with $n$: the outcomes $\omega$ in $A_n(\varepsilon)$, corresponding to the paths that fall outside the $\varepsilon$-band at time $n$, need not be the same across different times. All that matters is that the total probability of this set shrinks.
+
 Geometrically, this has a clean interpretation. Suppose we simulate $M$ independent copies of the entire experiment, producing $M$ sample paths $X_1(\omega_j), X_2(\omega_j), \ldots$ for $j = 1, \ldots, M$. Plot all $M$ paths on a single figure, draw an $\varepsilon$-band around the target $X$, and then draw a vertical line at time $n$. The cross-section at that vertical line consists of $M$ points, one per path. The proportion of those points that fall outside the $\varepsilon$-band is
 
 $$
@@ -156,8 +158,6 @@ Figure 6 shows this for running averages of i.i.d. $N(0,1)$ draws with $\varepsi
 ![Figure 6](convergence-in-probability.png)
 
 *Figure 6. **Top:** sample paths of $\bar X_n$, with paths outside the $\varepsilon$-band at the dashed vertical line highlighted in red. **Bottom:** the estimated proportion $\hat p_n$ of paths outside the band, decreasing toward $0$.*
-
-Note that the "bad" set $A_n(\varepsilon)$ is allowed to change with $n$: the paths that fall outside the $\varepsilon$-band at time $n$ need not be the same paths that fall outside at time $n+1$. All that matters is that the total probability of this set shrinks.
 
 ### The Weak Law of Large Numbers
 
