@@ -3,17 +3,15 @@ title: Probability inequalities
 slug: prob-inequalities
 date: 2026-04-09
 draft: false
-subtitle: From Markov to Hoeffding — bounding what you cannot compute
+subtitle: I explain and prove some common concentration and expectation inequalities
 tags:
   - Statistics
 notebook_url: "https://github.com/alexwangjiaqi/alex-blog/blob/main/notebooks/prob-inequalities.ipynb"
 ---
 
-In probability and statistics, we often want to know how likely a random variable is to be far from its expectation. Computing this exactly requires knowing the full distribution — the density or mass function, in complete detail. In many problems, especially in statistical theory and machine learning, we either do not know the full distribution or it is too complicated to work with directly.
+In probability and statistics, we often want to know how likely a random variable is to be far from its expectation. Computing this exactly requires knowing the full distribution. In many problems, especially in statistical learning theory and machine learning, we either do not know the full distribution or it is too complicated to work with directly.
 
-Probability inequalities provide a way forward. They trade distributional detail for generality: given limited information about a random variable — perhaps just its mean, or its mean and variance, or that it is bounded — they yield rigorous upper bounds on tail probabilities. The less you assume, the looser the bound; the more structure you exploit, the sharper the result.
-
-The bounds in this post fall into two groups. The first — the union bound, Markov's inequality, Chebyshev's inequality, the Chernoff bound, and Hoeffding's inequality — are **tail and concentration inequalities**. They bound the probability that a random variable deviates from its mean, each using progressively more information and delivering progressively tighter bounds. The second — the Cauchy–Schwarz and Jensen inequalities — are **expectation inequalities**. They are not primarily about tail probabilities, but they underpin many arguments in probability and statistics (for instance, the Cauchy–Schwarz inequality is the key step in the proof of the [Cramér–Rao lower bound]({{< ref "/blog/fisher-crlb" >}})).
+The bounds in this post fall into two groups. **Tail and concentration inequalities** bound the probability that a random variable deviates from its mean, and the union bound, Markov's inequality, Chebyshev's inequality, the Chernoff bound, and Hoeffding's inequality are examples of this.  We also have **expectation inequalities**, such as the Cauchy–Schwarz and Jensen inequalities. These underpin many arguments in probability and statistics (for instance, the Cauchy–Schwarz inequality is the key step in the proof of the [Cramér–Rao lower bound]({{< ref "/blog/fisher-crlb" >}})).
 
 ## Union bound
 
@@ -123,7 +121,7 @@ The Chernoff bound is a *technique* rather than a single formula: the quality of
 
 ## Hoeffding's inequality
 
-Hoeffding's inequality is what the Chernoff technique delivers when the summands are bounded. It gives a clean exponential tail bound for averages of independent bounded random variables, and is one of the most widely used concentration inequalities in statistical learning theory.
+Hoeffding's inequality is what the Chernoff technique delivers when the summands are bounded. It gives a exponential tail bound for averages of independent bounded random variables, and is one of the most widely used concentration inequalities in statistical learning theory.
 
 The key ingredient is Hoeffding's lemma, which bounds the MGF of a bounded, mean-zero random variable.
 
@@ -221,11 +219,11 @@ This also decays exponentially, though with a different constant in the exponent
 
 *Figure 2. True tail probability $\mathbb{P}(X \geq \lceil 3n/4 \rceil)$ for $X \sim \text{Binom}(n, 1/2)$ (black) alongside the Markov, Chebyshev, Chernoff, and Hoeffding upper bounds. The Markov bound is constant; Chebyshev decays polynomially; Chernoff and Hoeffding decay exponentially.*
 
-The pattern is clear. Each step up in the hierarchy trades generality for tightness: Markov applies to any non-negative random variable, while Hoeffding requires independence and boundedness. In exchange, Hoeffding's exponential decay is vastly sharper than Markov's constant bound, especially for large $n$.
+Each step up in the hierarchy of inequalities trades generality for tightness: Markov applies to any non-negative random variable, while Hoeffding requires independence and boundedness. In exchange, Hoeffding's exponential decay is vastly sharper than Markov's constant bound, especially for large $n$.
 
 ## Cauchy–Schwarz inequality
 
-The Cauchy–Schwarz inequality is not a concentration bound but a fundamental inequality relating expectations of products to expectations of squares. It appears throughout probability and statistics; for instance, it is the key ingredient in the proof of the [Cramér–Rao lower bound]({{< ref "/blog/fisher-crlb" >}}).
+The Cauchy–Schwarz inequality is a fundamental inequality relating expectations of products to expectations of squares. It appears throughout probability and statistics; for instance, it is the key ingredient in the proof of the [Cramér–Rao lower bound]({{< ref "/blog/fisher-crlb" >}}).
 
 {{% theorem %}}
 **Theorem (Cauchy–Schwarz inequality).** *For any random variables $X$ and $Y$ with $\mathbb{E}[X^2] < \infty$ and $\mathbb{E}[Y^2] < \infty$,*
@@ -296,10 +294,6 @@ Jensen's inequality has many standard applications:
 - **KL divergence is non-negative.** $g(x) = -\log x$ applied to the density ratio $q(X)/p(X)$ under $p$ gives $D_{\text{KL}}(p \| q) \geq 0$.
 - **Log-likelihood bounds.** The concavity of $\log$ is what makes the evidence lower bound (ELBO) in variational inference a lower bound.
 
-![Figure 3](jensen-illustration.png)
-
-*Figure 3. Jensen's inequality for $g(x) = x^2$. The red dots mark three equally likely outcomes of $X$. The filled black dot is $g(\mathbb{E}[X]) = (\mathbb{E}[X])^2$; the open dot is $\mathbb{E}[g(X)] = \mathbb{E}[X^2]$, computed as the average of $g$ evaluated at each outcome. Jensen's inequality says the open dot is always at or above the filled dot.*
-
 ## Appendix
 
 ### A1: Proof of Hoeffding's lemma {#a1-hoeffding-lemma}
@@ -346,9 +340,9 @@ for some $c$ between $0$ and $h$. Therefore $\mathbb{E}[e^{\lambda Z}] \leq e^{h
 
 ## Sources
 
-The presentation of the concentration inequalities follows the Stanford CS229 supplemental notes on Hoeffding's inequality and the textbook chapter on probability inequalities listed below.
+Much of the material in this post is covered in the Maths of Machine Learning course at the University of Cambridge. The presentation of Chernoff and Hoeffding bounds draws on the CS229 supplemental notes listed below.
 
+- Rajen Shah, *Maths of Machine Learning*, University of Cambridge lecture notes, Sections 3.1–3.2.
 - John Duchi, "Hoeffding's inequality," CS229 supplemental lecture notes, Stanford University.
-- Miklós Bóna and others, *A Walk Through Combinatorics* / probability lecture notes, Chapter 15: Probability Inequalities.
 
-The full code for all figures is in the [Jupyter notebook on GitHub](https://github.com/alexwangjiaqi/alex-blog/blob/main/notebooks/prob-inequalities.ipynb).
+The full code for the figures is in the [Jupyter notebook on GitHub](https://github.com/alexwangjiaqi/alex-blog/blob/main/notebooks/prob-inequalities.ipynb).
