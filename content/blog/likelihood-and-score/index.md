@@ -6,7 +6,7 @@ draft: false
 subtitle: What the likelihood function is, why it is not a probability, and what the score tells you
 tags:
   - Statistics
-notebook_url: "https://github.com/alexwangjiaqi/alex-blog/blob/main/notebooks/likelihood-and-score.ipynb"
+notebook_url: "https://github.com/alexwangjiaqi/alexwangjiaqi.github.io/blob/main/notebooks/likelihood-and-score.ipynb"
 ---
 
 The same formula $f(x, \theta)$ can be read in two entirely different ways. As a function of $x$ for fixed $\theta$, it is a probability model: it tells you how likely different data values are under a given parameter. As a function of $\theta$ for fixed observed $x$, it is the likelihood function: it tells you which parameter values make the observed data more or less plausible.
@@ -263,4 +263,4 @@ The material in this post draws on the likelihood inference chapter of the Princ
 - George Casella and Roger L. Berger, *Statistical Inference*, 2nd edition, Sections 6.3 and 7.2.
 - ["Why isn't the likelihood function a probability density function?"](https://mathoverflow.net/questions/10971/why-isnt-likelihood-a-probability-density-function), MathOverflow.
 
-The full code for all figures is in the [Jupyter notebook on GitHub](https://github.com/alexwangjiaqi/alex-blog/blob/main/notebooks/likelihood-and-score.ipynb).
+The full code for all figures is in the [Jupyter notebook on GitHub](https://github.com/alexwangjiaqi/alexwangjiaqi.github.io/blob/main/notebooks/likelihood-and-score.ipynb).

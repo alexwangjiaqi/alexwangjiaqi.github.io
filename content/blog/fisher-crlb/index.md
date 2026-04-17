@@ -6,7 +6,7 @@ draft: false
 subtitle: Why curvature of the log-likelihood controls estimation precision
 tags:
   - Statistics
-notebook_url: "https://github.com/alexwangjiaqi/alex-blog/blob/main/notebooks/fisher-crlb.ipynb"
+notebook_url: "https://github.com/alexwangjiaqi/alexwangjiaqi.github.io/blob/main/notebooks/fisher-crlb.ipynb"
 ---
 
 The shape of the log-likelihood near its maximum tells you something fundamental about estimation. A sharply peaked log-likelihood means the data strongly constrain the parameter; a flat one means many parameter values are about equally compatible with what was observed.
@@ -344,4 +344,4 @@ The material in this post draws on the likelihood inference chapter of the Princ
 - Rajen Shah, *Principles of Statistics*, University of Cambridge lecture notes, Section 1.2.
 - George Casella and Roger L. Berger, *Statistical Inference*, 2nd edition, Section 7.3.
 
-The full code for all figures is in the [Jupyter notebook on GitHub](https://github.com/alexwangjiaqi/alex-blog/blob/main/notebooks/fisher-crlb.ipynb).
+The full code for all figures is in the [Jupyter notebook on GitHub](https://github.com/alexwangjiaqi/alexwangjiaqi.github.io/blob/main/notebooks/fisher-crlb.ipynb).

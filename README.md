@@ -1,4 +1,4 @@
-# alex-blog
+# alexwangjiaqi.github.io
 
 Personal site and blog built with **[Hugo](https://gohugo.io/)** (no third-party theme). Layout and typography take inspiration from [Gregory Gundersen’s site](https://gregorygundersen.com/): narrow measure, simple nav, understated links. The site splits **technical writing** (**Blog**) from lighter **Personal** notes, each with its own taxonomy and topic navigation.
 
@@ -15,8 +15,8 @@ Live configuration uses **Libre Franklin** by default (a classic, readable sans)
 ## Quick start
 
 ```bash
-git clone https://github.com/alexwangjiaqi/alex-blog.git
-cd alex-blog
+git clone https://github.com/alexwangjiaqi/alexwangjiaqi.github.io.git
+cd alexwangjiaqi.github.io
 hugo server
 ```
 

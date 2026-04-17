@@ -6,7 +6,8 @@ draft: false
 subtitle: I explain and prove some common concentration and expectation inequalities
 tags:
   - Statistics
-notebook_url: "https://github.com/alexwangjiaqi/alex-blog/blob/main/notebooks/prob-inequalities.ipynb"
+  - Machine Learning
+notebook_url: "https://github.com/alexwangjiaqi/alexwangjiaqi.github.io/blob/main/notebooks/prob-inequalities.ipynb"
 ---
 
 In probability and statistics, we often want to know how likely a random variable is to be far from its expectation. Computing this exactly requires knowing the full distribution. In many problems, especially in statistical learning theory and machine learning, we either do not know the full distribution or it is too complicated to work with directly.
@@ -345,4 +346,4 @@ Much of the material in this post is covered in the Maths of Machine Learning co
 - Rajen Shah, *Maths of Machine Learning*, University of Cambridge lecture notes, Sections 3.1–3.2.
 - John Duchi, "Hoeffding's inequality," CS229 supplemental lecture notes, Stanford University.
 
-The full code for the figures is in the [Jupyter notebook on GitHub](https://github.com/alexwangjiaqi/alex-blog/blob/main/notebooks/prob-inequalities.ipynb).
+The full code for the figures is in the [Jupyter notebook on GitHub](https://github.com/alexwangjiaqi/alexwangjiaqi.github.io/blob/main/notebooks/prob-inequalities.ipynb).

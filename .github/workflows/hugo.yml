@@ -39,15 +39,22 @@ jobs:
           sudo install -m 755 hugo /usr/local/bin/hugo
           hugo version
 
-      # Project Pages URL: https://<owner>.github.io/<repo>/
+      # User/organization site (<owner>.github.io repo): https://<owner>.github.io/
+      # Project site (any other repo name): https://<owner>.github.io/<repo>/
       - name: Build with Hugo
         env:
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
         run: |
           set -euo pipefail
-          hugo --gc --minify \
-            --baseURL "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/"
+          OWNER="${{ github.repository_owner }}"
+          REPO="${{ github.event.repository.name }}"
+          if [ "$REPO" = "${OWNER}.github.io" ]; then
+            BASE_URL="https://${OWNER}.github.io/"
+          else
+            BASE_URL="https://${OWNER}.github.io/${REPO}/"
+          fi
+          hugo --gc --minify --baseURL "$BASE_URL"
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4

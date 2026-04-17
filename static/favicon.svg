@@ -5,13 +5,14 @@
     ]]></style>
   </defs>
   <text
-    transform="translate(16, 16)"
-    x="0"
-    y="0"
+    x="16"
+    y="16"
     font-family="'Libre Franklin', system-ui, -apple-system, 'Segoe UI', sans-serif"
     font-weight="700"
-    font-size="26"
+    font-size="30"
     text-anchor="middle"
-    dominant-baseline="central"
+    dominant-baseline="middle"
+    alignment-baseline="middle"
+    dy="-2"
     fill="#000000">a</text>
 </svg>

@@ -6,7 +6,7 @@ draft: false
 subtitle: A visual guide to convergence in distribution, in probability, and almost surely
 tags:
   - Statistics
-notebook_url: "https://github.com/alexwangjiaqi/alex-blog/blob/main/notebooks/stochastic-convergence.ipynb"
+notebook_url: "https://github.com/alexwangjiaqi/alexwangjiaqi.github.io/blob/main/notebooks/stochastic-convergence.ipynb"
 ---
 
 When the objects we study are deterministic (e.g. real numbers, functions, sequences), convergence has an unambiguous meaning. We specify a notion of distance, and we ask whether the terms of a sequence eventually stay within any prescribed tolerance of a limit.
@@ -408,4 +408,4 @@ The material in this post is covered in the Principles of Statistics course at t
 - Pierre Lafaye de Micheaux and Benoit Liquet, ["Understanding Convergence Concepts: A Visual-Minded and Graphical Simulation-Based Approach"](https://doi.org/10.1198/tas.2009.0032).
 - Robby McKilliam and others, ["Convergence in probability vs. almost sure convergence"](https://stats.stackexchange.com/questions/2230/convergence-in-probability-vs-almost-sure-convergence).
 
-The full code for all figures is in the [Jupyter notebook on GitHub](https://github.com/alexwangjiaqi/alex-blog/blob/main/notebooks/stochastic-convergence.ipynb).
+The full code for all figures is in the [Jupyter notebook on GitHub](https://github.com/alexwangjiaqi/alexwangjiaqi.github.io/blob/main/notebooks/stochastic-convergence.ipynb).
