@@ -11,6 +11,8 @@ html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
+  /* Keeps centered layout from jumping when only some pages show a vertical scrollbar. */
+  scrollbar-gutter: stable;
 }
 
 *,
