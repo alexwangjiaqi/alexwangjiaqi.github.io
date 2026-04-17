@@ -1,4 +1,4 @@
-baseURL = 'https://alexwangjiaqi.github.io/'
+baseURL = 'https://alexanderwang.blog/'
 languageCode = 'en-gb'
 title = 'Alexander Wang'
 disableKinds = ['RSS']
